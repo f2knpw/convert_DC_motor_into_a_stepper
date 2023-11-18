@@ -1,0 +1,43 @@
+name: test_trotec
+start:
+  must_home: false
+axes:
+  x:
+    steps_per_mm: 5666
+    max_rate_mm_per_min: 500
+    acceleration_mm_per_sec2: 25
+    max_travel_mm: 1000
+    motor0:
+      limit_all_pin: NO_PIN
+      limit_neg_pin: NO_PIN
+      limit_pos_pin: NO_PIN
+      hard_limits: false
+      pulloff_mm: 1
+      standard_stepper:
+        step_pin: gpio.14:pu
+        direction_pin: gpio.12:pu
+        disable_pin: NO_PIN
+  y:
+    steps_per_mm: 80
+    max_rate_mm_per_min: 1000
+    acceleration_mm_per_sec2: 50
+    max_travel_mm: 1000
+    motor0:
+      limit_all_pin: NO_PIN
+      limit_neg_pin: NO_PIN
+      limit_pos_pin: NO_PIN
+      hard_limits: false
+      pulloff_mm: 1
+      standard_stepper:
+        step_pin: gpio.25
+        direction_pin: gpio.26
+        disable_pin: NO_PIN
+stepping:
+  engine: RMT
+  idle_ms: 250
+  pulse_us: 4
+  dir_delay_us: 0
+  disable_delay_us: 0
+Laser:
+  output_pin: gpio.13
+  enable_pin: gpio.18
